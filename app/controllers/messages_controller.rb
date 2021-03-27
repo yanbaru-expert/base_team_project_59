@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
+  def show
+    @message = Message.find_by(id: params[:id])
+  end
+
   def new
     @message = Message.new
   end
